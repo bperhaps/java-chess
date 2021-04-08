@@ -8,11 +8,11 @@ import java.sql.SQLException;
 
 public class DataSource {
 
-    private static final String server = "localhost:13306";
-    private static final String database = "chess";
-    private static final String option = "?useSSL=false&serverTimezone=UTC";
-    private static final String userName = "root";
-    private static final String password = "root";
+    private static final String SERVER = "localhost:13306";
+    private static final String DATABASE = "chess";
+    private static final String OPTION = "?useSSL=false&serverTimezone=UTC";
+    private static final String USER_NAME = "root";
+    private static final String PASSWORD = "root";
 
     public Connection getConnection() {
         setJdbcDriver();
@@ -23,7 +23,7 @@ public class DataSource {
         Connection con;
 
         try {
-            con = DriverManager.getConnection("jdbc:mysql://" + server + "/" + database + option, userName, password);
+            con = DriverManager.getConnection("jdbc:mysql://" + SERVER + "/" + DATABASE + OPTION, USER_NAME, PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
             throw new DataAccessException(e);
