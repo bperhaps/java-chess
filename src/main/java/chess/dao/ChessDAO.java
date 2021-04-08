@@ -11,7 +11,7 @@ public class ChessDAO {
     }
 
     public void addChessGame(String gameId, String data) {
-        String query = "INSERT INTO chess VALUES (?, ?)";
+        String query = "INSERT INTO chess (game_id, data) VALUES (?, ?)";
 
         jdbcTemplate.update(query, gameId, data);
     }
