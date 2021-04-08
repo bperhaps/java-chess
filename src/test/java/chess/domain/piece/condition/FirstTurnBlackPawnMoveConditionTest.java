@@ -18,12 +18,12 @@ class FirstTurnBlackPawnMoveConditionTest {
     void isSatisfiedBy() {
         FirstTurnBlackPawnMoveCondition condition = new FirstTurnBlackPawnMoveCondition();
         Board board = new Board(Collections.singletonList(
-                BlackPawn.createWithCoordinate(0, 0)
+                BlackPawn.createWithCoordinate(1, 0)
         ));
-        boolean rightActual = condition.isSatisfiedBy(board, BlackPawn.createWithCoordinate(0, 0),
-                new Position(2, 0));
-        boolean falseActual = condition.isSatisfiedBy(board, BlackPawn.createWithCoordinate(0, 0),
+        boolean rightActual = condition.isSatisfiedBy(board, BlackPawn.createWithCoordinate(1, 0),
                 new Position(3, 0));
+        boolean falseActual = condition.isSatisfiedBy(board, BlackPawn.createWithCoordinate(1, 0),
+                new Position(4, 0));
 
         assertThat(rightActual).isTrue();
         assertThat(falseActual).isFalse();

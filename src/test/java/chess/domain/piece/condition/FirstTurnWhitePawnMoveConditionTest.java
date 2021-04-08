@@ -20,10 +20,10 @@ class FirstTurnWhitePawnMoveConditionTest {
         Board board = new Board(Collections.singletonList(
                 WhitePawn.createWithCoordinate(7, 0)
         ));
-        boolean rightActual = condition.isSatisfiedBy(board, WhitePawn.createWithCoordinate(7, 0),
-                new Position(5, 0));
-        boolean falseActual = condition.isSatisfiedBy(board, WhitePawn.createWithCoordinate(7, 0),
+        boolean rightActual = condition.isSatisfiedBy(board, WhitePawn.createWithCoordinate(6, 0),
                 new Position(4, 0));
+        boolean falseActual = condition.isSatisfiedBy(board, WhitePawn.createWithCoordinate(6, 0),
+                new Position(3, 0));
 
         assertThat(rightActual).isTrue();
         assertThat(falseActual).isFalse();
