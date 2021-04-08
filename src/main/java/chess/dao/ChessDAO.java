@@ -4,11 +4,9 @@ import java.util.List;
 
 public class ChessDAO {
 
-    private final DataSource dataSource;
     private final JdbcTemplate jdbcTemplate;
 
     public ChessDAO(DataSource dataSource) {
-        this.dataSource = dataSource;
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
