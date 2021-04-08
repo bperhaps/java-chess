@@ -10,7 +10,7 @@ import chess.domain.piece.PieceFactory;
 
 import java.util.Arrays;
 
-public class ChessController {
+public class ConsoleChessController {
 
     public void run() {
         Board board = initializeBoard();

@@ -9,7 +9,7 @@ import spark.Response;
 import static spark.Spark.*;
 
 
-public class ChessController {
+public class WebChessController {
     private static final Gson gson = new Gson();
 
     private final StartService startService;
@@ -19,12 +19,12 @@ public class ChessController {
     private final StatusService statusService;
     private final LoadService loadService;
 
-    public ChessController(StartService startService,
-                           EndService endService,
-                           MoveService moveService,
-                           SaveService saveService,
-                           StatusService statusService,
-                           LoadService loadService) {
+    public WebChessController(StartService startService,
+                              EndService endService,
+                              MoveService moveService,
+                              SaveService saveService,
+                              StatusService statusService,
+                              LoadService loadService) {
         this.startService = startService;
         this.endService = endService;
         this.moveService = moveService;
