@@ -19,6 +19,14 @@ public class DataSource {
         return connectToDB();
     }
 
+    private void setJdbcDriver() {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new DataAccessException(e);
+        }
+    }
+
     private Connection connectToDB() {
         Connection con;
 
@@ -32,12 +40,5 @@ public class DataSource {
         return con;
     }
 
-    private void setJdbcDriver() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new DataAccessException(e);
-        }
-    }
 
 }
